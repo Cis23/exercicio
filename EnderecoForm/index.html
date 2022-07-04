@@ -1,58 +1,49 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-bt">
   <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Exercicio</title>
-    <link rel="stylesheet" href="css/estilo.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>localStorange</title>
+    <link rel="stylesheet" href="./css/style.css">
   </head>
   <body>
-    <h1>Buscando CEP</h1>
-    <form id="form" action="receptor.php" method="POST"> <!--action="receptor.php" method="POST"-->
-      <div class="spam">
-        <!-- <button type="button" id="btnSpam">
-          fechar
-        </button> -->
-        *Os campos com asterisco(*) precisam ser preenchidos obrigatoriamente*
-      </div>
+    <form id="form">
+      <h1>Valida CEP: </h1>
+      <div class="container">
 
-      <div>
+        <div class="div">
+          <label for="cep">CEP: </label>
+          <input type="text" name="cep" id="cep" maxlength="9" required> <!-- Campo Obrigatório  -->
+          <span class="erro obrigatorio"></span>
+        </div>
+
+        <div class="div">
+          <label for="logradouro">Rua: </label>
+          <input type="text" name="logradouro" id="logradouro" required> <!-- Campo Obrigatório  -->
+          <span class="erro obrigatorio"></span>
+        </div>
+
+        <div class="div">
+          <label for="numero">Número: </label>
+          <input type="number" name="numero" id="numero" maxlength="6" required> <!-- Campo Obrigatório  -->
+          <span class="erro obrigatorio" ></span>
+        </div>
+
+        <div class="div">
+          <label for="complemento">Complemento: </label>
+          <input type="text" name="complemento" id="complemento">
+          <span class="erro"></span>
+        </div>
+
+        <div class="div">
+          <label for="localidade">Cidade: </label>
+          <input type="text" name="localidade" id="localidade" required> <!-- Campo Obrigatório  -->
+          <span class="erro obrigatorio"></span>
+        </div>
+
         <div>
-          <div class="div">
-            <label for="cep" >CEP: </label>
-            <input name="cep" type="text" id="cep" maxlength="9" placeholder="Apenas Números.(xxxxxxx)"><!--required -->
-            <span id="spanCep" class="requerido"></span>
-          </div>
-
-          <div class="div">
-            <label for="logradouro">Rua: </label>
-            <input name="rua" type="text" id="logradouro"> <span class="requerido"><!--required --></span>
-          </div>
-
-          <div class="div">
-            <label for="numero" >Numero: </label>
-            <input  name="numero" type="text" id="numero"><!--required --> <span class="requerido"></span>
-          </div>
-        </div>
-
-        <div class="div">
-          <label for="complemento" >Complemento: </label>
-          <input name="complemento" type="text" id="complemento">
-        </div>
-
-        <div class="div">
-          <label for="bairro">Bairro: </label>
-          <input name="bairro" type="text" id="bairro"><!--required --> <span class="requerido"></span>
-        </div>
-
-        <div class="div">
-          <label for="cidade">Cidade: </label>
-          <input name="cidade" type="text"><!--required --> <span class="requerido"></span>
-        </div>
-
-        <div class="div" id="divSelect">
-          <label for="uf" >UF: </label>
-          <select name="uf" id="uf" > <!--required -->
+          <label for="uf">UF: </label>
+          <select name="uf" id="uf" required> <!--required -->
             <option value="">Selecione</option>
             <option value="ac">Acre (AC)</option>
             <option value="al">Alagoas (AL)</option>
@@ -81,6 +72,7 @@
             <option value="se">Sergipe (SE)</option>
             <option value="to">Tocantins (TO)</option>
           </select>
+          <span class="erro obrigatorio" ></span>
         </div>
 
         <div class="div">
@@ -88,9 +80,13 @@
           <input type="text" name="pais" id="pais" value="Brasil">
         </div>
 
-        <input type="submit" value="Enviar" id="btnEnviar">
+        <button type="submit" id="btnEnviar" class="btn">Enviar</button>
       </div>
     </form>
-    <script src="./main2.js"></script>
+
+    <script src="./js/validaNumero.js"></script>
+    <script src="./js/validacaoCustomizada.js" type="module"></script>
+    <script src="./js/main.js" type="module"></script>
+
   </body>
 </html>
